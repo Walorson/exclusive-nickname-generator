@@ -1,0 +1,71 @@
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 22px;
+    background-color: #eee;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+.container {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#box {
+    border-bottom: 2px solid #111;
+    padding: 15px;
+    margin: 10px;
+    min-width: 500px;
+    text-align: center;
+    font-size: 48px;
+} legend { font-weight: bold; }
+form { margin-top: 10px; }
+button {
+    width: 532px;
+    height: 50px;
+    font-size: 1.5rem;
+}
+.settings, #darkmode { user-select: none; }
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 6rem;
+    margin: 40px 0;
+}
+input[type=checkbox] { height: 14px; width: 14px; }
+input[type=text] { margin: 0 8px; height: 20px; }
+#darkmode {
+    position: absolute;
+    bottom: 15px; right: 20px;
+    background-color: #111; color: white;
+    padding: 7px 12px;
+    border-radius: 15px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+#settings {
+    position: absolute;
+    left: 10px; bottom: 5px;
+    cursor: pointer;
+}
+#dodatki {
+    position: absolute;
+    left: 50%; top: 50%; transform: translate(-50%,-50%);
+    height: 800px; width: 800px;
+    background-color: #eee;
+    border: 3px solid #111;
+    box-shadow: 1px 2px 34px -7px rgba(0,0,0,0.75);
+    opacity: 0; z-index: -5;
+    transition: background-color 0.2s ease-in-out;
+    padding: 15px;
+}
+.dodatek { min-height: 100px; width: 300px; border: 3px solid #111; }
+.dodatekimg img { height: 150px; width: 300px; border-bottom: 3px solid #111; }
+.dodatektitle {  font-style: italic; font-size: 19px; text-align: center;}
+.dodatekauthor { font-size: 15px;  text-align: right; margin-right: 5px; }
+.dodatekadd { width: 100%; padding: 5px 0; background-color: green; text-align: center; color: white; user-select: none; border-top: 3px solid #111; transition: all 0.2s linear; }
+.dodatekadd:hover { cursor: pointer; filter: brightness(110%); }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Nick Generator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Szymon Gniadek">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="settings"><img src="settings.png" height="45"></div>
+    <div id="dodatki">
+        <h2 style="margin:0">DODATKI</h2>
+        <p>Możesz wybrać i korzystać z poniższych dodatków zupełnie za darmo!</p>
+        <div class="dodatek">
+            <div class="dodatekimg"><img src="mods/mod1.png"></div>
+            <div class="dodatektitle">Customowe Przedrostki/Przyrostki</div>
+            <div class="dodatekauthor">Autor: MiroslawZelent</div>
+            <div class="dodatekadd" id="mod1-custom-przedrostki-przyrostki">+</div>
+        </div>
+    </div>
+
+    <div class="title">Exclusive Nickname Generator</div>
+    <div class="container">
+        <div id="box"><span id="nickname">Sample Text</span></div>
+        <button>Wygeneruj</button>
+        <div class="settings">
+            <form>
+                <legend>Losuj wyrazy:</legend>
+                <label><input type="radio" name="a" id="a1" checked> Jednoczłonowe</label>
+                <label><input type="radio" name="a" id="a2"> Dwuczłonowe</label>
+                <label><input type="radio" name="a" id="a3"> Wieloczłonowe</label>
+            </form>
+            <form style="font-size: 21px;">
+                <legend>Używaj:</legend>
+                <label><input type="checkbox" id="b1">przyrostku 'PL'</label>
+                <label><input type="checkbox" id="b2">tylko liczb dwucyfrowych</label>
+            </form>
+            <div id="darkmode">Dark</div>
+            <script src="script.js"></script>
+            <script src="modLoader.js"></script>
+            <div id="mod1">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
