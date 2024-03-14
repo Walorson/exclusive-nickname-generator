@@ -41,9 +41,12 @@ button.addEventListener("click", createNickname);
 const darkmode = document.getElementById("darkmode"); let isDarkMode = false;
 darkmode.onclick = function () {
     if (isDarkMode == false) {
-        document.body.style.backgroundColor = "#262626";
-        document.body.style.color = "#eee";
+        document.body.style.backgroundColor = "#111";
+        document.body.style.color = "#888";
         document.getElementById("dodatki").style.backgroundColor = "#333";
+        document.getElementById("box").style.borderBottomColor = "#eee";
+        button.classList.add("dark-button");
+        modButton.style.filter = 'invert(100%)';
 
         darkmode.style.backgroundColor = "#eee";
         darkmode.style.color = "#000";
@@ -52,12 +55,16 @@ darkmode.onclick = function () {
         isDarkMode = true;
     }
     else if (isDarkMode == true) {
-        document.body.style.backgroundColor = "#eee";
-        document.body.style.color = "#000";
-        document.getElementById("dodatki").style.backgroundColor = "#eee";
+        document.body.style.backgroundColor = "";
+        document.body.style.color = "";
+        document.getElementById("dodatki").style.backgroundColor = "";
+        document.getElementById("box").style.borderBottomColor = "";
+        button.classList.remove("dark-button");
+        modButton.style.filter = '';
 
-        darkmode.style.backgroundColor = "#111";
-        darkmode.style.color = "#fff";
+
+        darkmode.style.backgroundColor = "";
+        darkmode.style.color = "";
         darkmode.textContent = "Dark";
 
         isDarkMode = false;
