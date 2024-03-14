@@ -42,7 +42,7 @@ const darkmode = document.getElementById("darkmode"); let isDarkMode = false;
 darkmode.onclick = function () {
     if (isDarkMode == false) {
         document.body.style.backgroundColor = "#111";
-        document.body.style.color = "#888";
+        document.body.style.color = "#ccc";
         document.getElementById("dodatki").style.backgroundColor = "#333";
         document.getElementById("box").style.borderBottomColor = "#eee";
         button.classList.add("dark-button");

@@ -9,6 +9,7 @@
     <meta name="author" content="Szymon Gniadek">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -31,22 +32,27 @@
         <div class="settings">
             <form>
                 <legend>Losuj wyrazy:</legend>
-                <label><input type="radio" name="a" id="a1" checked> Jednoczłonowe</label>
-                <label><input type="radio" name="a" id="a2"> Dwuczłonowe</label>
-                <label><input type="radio" name="a" id="a3"> Wieloczłonowe</label>
+                <div class="options">
+                    <label><input type="radio" name="a" id="a1" checked> Jednoczłonowe</label>
+                    <label><input type="radio" name="a" id="a2"> Dwuczłonowe</label>
+                    <label><input type="radio" name="a" id="a3"> Wieloczłonowe</label>
+                </div>
             </form>
             <form style="font-size: 21px;">
                 <legend>Używaj:</legend>
-                <label><input type="checkbox" id="b1">przyrostku 'PL'</label>
-                <label><input type="checkbox" id="b2">tylko liczb dwucyfrowych</label>
+                <div class="options">
+                    <label><input type="checkbox" id="b1">przyrostku 'PL'</label>
+                    <label><input type="checkbox" id="b2">tylko liczb dwucyfrowych</label>
+                </div>
             </form>
+        </div>
             <div id="darkmode">Dark</div>
             <script src="script.js"></script>
             <script src="modLoader.js"></script>
             <div id="mod1">
                 
             </div>
-        </div>
+        
     </div>
 </body>
 </html>
