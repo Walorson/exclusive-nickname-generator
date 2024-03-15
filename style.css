@@ -47,6 +47,7 @@ input[type=text] { margin: 0 8px; height: 20px; }
     width: 50px;
     text-align: center;
     cursor: pointer;
+    z-index: 51;
 }
 .dark-button {
     background-color: #333;
@@ -57,6 +58,7 @@ input[type=text] { margin: 0 8px; height: 20px; }
     left: 10px; bottom: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    z-index: 51;
 }
 #dodatki {
     position: absolute;
