@@ -29,7 +29,7 @@ button {
     font-size: 1.5rem;
     transition: all 0.2s ease-in-out;
 }
-.settings, #darkmode { user-select: none; }
+.settings, .copy, #darkmode { user-select: none; -webkit-user-drag: none; -moz-window-dragging: no-drag; }
 .title {
     text-align: center;
     font-weight: bold;
@@ -53,12 +53,38 @@ input[type=text] { margin: 0 8px; height: 20px; }
     background-color: #333;
     color: #aaa;
 }
-#settings {
+#settings, #copy {
     position: absolute;
     left: 10px; bottom: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     z-index: 51;
+}
+#copy {
+    left: initial;
+    right: 110px;
+}
+.info {
+    position: absolute;
+    right: 80px;
+    bottom: 65px;
+    font-size: 1.25rem;
+    animation: copyInfo 1.3s ease-out;
+}
+@keyframes copyInfo {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
 }
 #dodatki {
     position: absolute;

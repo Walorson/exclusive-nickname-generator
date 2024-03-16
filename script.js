@@ -4,11 +4,10 @@ const radio2 = document.getElementById("a2"); //Dwuczłonowe
 const radio3 = document.getElementById("a3"); //Wieloczłonowe
 const checkbox1 = document.getElementById("b1"); //Używaj przyrostka "PL"
 const checkbox2 = document.getElementById("b2"); //Używaj tylko liczb dwucyfrowych
-const nickname = document.getElementById("nickname");
 
 const single = ["piętro","wieżowiec","szafa","odwiert","drukarka","gościnność","klawiatura","przedłużacz","telekomunikacja","obciąganie","wentylator","wakacje","styczeń","papież","matryca","ruchanie","improwizacja","samochód","procesor","trawa","facebook","poduszka","karakan","wiolonczela","kontrabas","koparka","śmieciarka","okno","grawitacja","atmosfera","ogrodnik","gówno","szynka","ser","sofa","gruby","bluza","meister","kanister","krzesło","samotność","kobieta","mężczyzna","siekiera","autobus","dzik","suszarka","mikrofon","gej","żurek","worek","samowystarczalny", "dyktafon", "hemoglobina", "niezrozumienie", "nieufność", "hurtownia", "witraż", "ciekawość", "stodoła", "ślepota", "falsyfikacja", "irracjonalizm", "germanistyka", "alfabetycznie", "ewangelia", "romb", "egzotyczność", "kemping", "bezalkoholowy", "oligosacharyda", "akcyza", "luty", "antykatoda", "frajer","neurotransmisja",'kwantyfikacja', "homogenizacja", "elektroforeza", "kriogenika", "ekstrapolacja", "metalurgia", "małpiątko", "peryhelium", "polimer", "sacharocweloza", "kapitalizm", "socjalizm"];
 
-const double = ["LubieSrać","WybiteOko","KrwistyBekon","NiebieskiKabel","PrzemianaMaterii","UprawianieSportu","MateuszMierzwa","OtwarteDrzwi","TrzęsienieZiemii","WstrząsMózgu","DużyPenis","KośćMiedniczna","ZasłużonyUrlop","ZgrzytanieZębów","KwaśneDeszcze","GlobalneOcieplenie","KartaGraficzna","PrzegrzanieProcesora","MyjniaSamochodowa","CiężkieCzasy","WyposażenieDomu","InwazjaZombie","ZanieczyszczeniePowietrza","SkokWiary","OgrzewaniePodłogowe","OddziaływanieSłabe","PłytaChodnikowa","SchładzaczArbuzów","SpadająceLiście","PowiewającaFlaga","CyrkulacjaPowietrza","PiwonactwoElektronowe","ŻebraniePieniędzy","SyntezaBiałka","ReakcjaWybuchowa","ObgryzaniePaznokci","PotężnyWojak","ŚwiatłoNadzei","ŻółtaMorda","RozwiązanieProblemu","SzczynyPsa","GrubasPierdolony","MrElegancik","MrAgencik","AsertywnyCzłowiek","PalaczŻydów","KermitŻaba","SmoczeJaja","ZasadaKomplementarności","AlbertEinstein","AmebaUmysłowa","UpośledzonieUmysłowe","SzybaOdpowiedź",
+const double = ["LubieSrać","WybiteOko","KrwistyBekon","NiebieskiKabel","PrzemianaMaterii","UprawianieSportu","RobertLewandowski","OtwarteDrzwi","TrzęsienieZiemii","WstrząsMózgu","DużyPenis","KośćMiedniczna","ZasłużonyUrlop","ZgrzytanieZębów","KwaśneDeszcze","GlobalneOcieplenie","KartaGraficzna","PrzegrzanieProcesora","MyjniaSamochodowa","CiężkieCzasy","WyposażenieDomu","InwazjaZombie","ZanieczyszczeniePowietrza","SkokWiary","OgrzewaniePodłogowe","OddziaływanieSłabe","PłytaChodnikowa","SchładzaczArbuzów","SpadająceLiście","PowiewającaFlaga","CyrkulacjaPowietrza","PiwonactwoElektronowe","ŻebraniePieniędzy","SyntezaBiałka","ReakcjaWybuchowa","ObgryzaniePaznokci","PotężnyWojak","ŚwiatłoNadzei","ŻółtaMorda","RozwiązanieProblemu","SzczynyPsa","GrubasPierdolony","MrElegancik","MrAgencik","AsertywnyCzłowiek","PalaczŻydów","KermitŻaba","SmoczeJaja","ZasadaKomplementarności","AlbertEinstein","AmebaUmysłowa","UpośledzonieUmysłowe","SzybaOdpowiedź",
 "MyślenieSzkodzi", "DrogaMleczna", "ZaćmienieSłońca", "ZbiegOkoliczności", "KiśćWinogron", "DwaDeko", "DeserSerowy", "DalekosiężnaDecyzja",
 "WydobywaćKobalt", "FiltrPowietrza", "SatelitaGeostacjonarny", "AdaptacjaFilmowa", "CenaPopcornu", "EpokaKamienia", "TwierdzenieCosinusów", "KrólestwoSaksonii", "KacprowyWierch", "PiecŁukowy", "OgniwoGalwaniczne", "RozmnażaniePłciowe", "DyskAkrecyjny", "FunkcjaPochodna", "TrudneChwile", "KwantPrzestrzeni", "MamDowna","WyśrubowaneEgo","RyjemyBanie","DobreCzasy", "MikrobiologiaŚrodowiskowa", "FizjologiaRoślin","ImmunologiaMolekularna","BiochemiaStrukturalna","TeoriaWzględności"];
 
@@ -18,11 +17,7 @@ const multi = ["SramCiNaKlate","TwojaStaraToKopara","LubięJeśćGówno","Rozpoc
 
 function createNickname() 
 {
-    let first = firstCreate();
-    let second = secondCreate();
-    let third = thirdCreate(); 
-
-    nickname.textContent = first + second + third;
+    document.getElementById("nickname").textContent = firstCreate() + secondCreate() + thirdCreate();
 }
 button.addEventListener("click", createNickname);
 
@@ -89,3 +84,25 @@ darkmode.onclick = function ()
         isDarkMode = false;
     }
 }
+
+function copyToClipboard() {
+    let textToCopy = document.getElementById("nickname").textContent;
+
+    let copyText = document.createElement("textarea");
+    document.body.appendChild(copyText);
+    copyText.value = textToCopy;
+    copyText.select();
+    document.execCommand("copy");
+    document.body.removeChild(copyText);
+
+    let info = document.createElement("div");
+    info.textContent = "Skopiowano!";
+    info.classList.add("info");
+    document.body.appendChild(info);
+
+    setTimeout(() => {
+        document.body.removeChild(info);
+    },1250);
+}
+
+document.getElementById("copy").addEventListener("click", copyToClipboard);
