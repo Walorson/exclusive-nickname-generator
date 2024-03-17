@@ -4,6 +4,7 @@ const radio2 = document.getElementById("a2"); //Dwuczłonowe
 const radio3 = document.getElementById("a3"); //Wieloczłonowe
 const checkbox1 = document.getElementById("b1"); //Używaj przyrostka "PL"
 const checkbox2 = document.getElementById("b2"); //Używaj tylko liczb dwucyfrowych
+const copyButton = document.getElementById("copy");
 
 const single = ["piętro","wieżowiec","szafa","odwiert","drukarka","gościnność","klawiatura","przedłużacz","telekomunikacja","obciąganie","wentylator","wakacje","styczeń","papież","matryca","ruchanie","improwizacja","samochód","procesor","trawa","facebook","poduszka","karakan","wiolonczela","kontrabas","koparka","śmieciarka","okno","grawitacja","atmosfera","ogrodnik","gówno","szynka","ser","sofa","gruby","bluza","meister","kanister","krzesło","samotność","kobieta","mężczyzna","siekiera","autobus","dzik","suszarka","mikrofon","gej","żurek","worek","samowystarczalny", "dyktafon", "hemoglobina", "niezrozumienie", "nieufność", "hurtownia", "witraż", "ciekawość", "stodoła", "ślepota", "falsyfikacja", "irracjonalizm", "germanistyka", "alfabetycznie", "ewangelia", "romb", "egzotyczność", "kemping", "bezalkoholowy", "oligosacharyda", "akcyza", "luty", "antykatoda", "frajer","neurotransmisja",'kwantyfikacja', "homogenizacja", "elektroforeza", "kriogenika", "ekstrapolacja", "metalurgia", "małpiątko", "peryhelium", "polimer", "sacharocweloza", "kapitalizm", "socjalizm"];
 
@@ -60,7 +61,8 @@ darkmode.onclick = function ()
         document.getElementById("dodatki").style.backgroundColor = "#333";
         document.getElementById("box").style.borderBottomColor = "#eee";
         button.classList.add("dark-button");
-        modButton.style.filter = 'invert(100%)';
+        modButton.style.filter = 'invert(95%)';
+        copyButton.style.filter = 'invert(95%)';
 
         darkmode.style.backgroundColor = "#eee";
         darkmode.style.color = "#000";
@@ -75,6 +77,7 @@ darkmode.onclick = function ()
         document.getElementById("box").style.borderBottomColor = "";
         button.classList.remove("dark-button");
         modButton.style.filter = '';
+        copyButton.style.filter = '';
 
 
         darkmode.style.backgroundColor = "";
@@ -85,8 +88,8 @@ darkmode.onclick = function ()
     }
 }
 
-function copyToClipboard() {
-    let textToCopy = document.getElementById("nickname").textContent;
+function copyToClipboard(text) {
+    let textToCopy = text;
 
     let copyText = document.createElement("textarea");
     document.body.appendChild(copyText);
@@ -105,4 +108,6 @@ function copyToClipboard() {
     },1250);
 }
 
-document.getElementById("copy").addEventListener("click", copyToClipboard);
+copyButton.onclick = () => {
+    copyToClipboard(document.getElementById("nickname").textContent);
+}

@@ -65,7 +65,11 @@ mod1.modscript = () => {
         mod1chbox2.onclick = function () { if (mod1chbox2.checked == true) mod1textbox2.removeAttribute("disabled"); else { mod1textbox2.setAttribute("disabled", ";"); mod1textbox2.value = ""; } } 
         button.onclick = function () {
             if(mod1.isLoad) { document.getElementById("mod1przedrostek").innerHTML = mod1textbox1.value; document.getElementById("mod1przyrostek").innerHTML = mod1textbox2.value; }
-            else { document.getElementById("mod1przedrostek").innerHTML = ""; document.getElementById("mod1przyrostek").innerHTML = "";}
+            else { document.getElementById("mod1przedrostek").innerHTML = ""; mod1textbox1.value = ''; document.getElementById("mod1przyrostek").innerHTML = ""; mod1textbox2.value = '';}
+        }
+
+        copyButton.onclick = () => {
+            copyToClipboard(mod1textbox1.value + document.getElementById("nickname").textContent + mod1textbox2.value);
         }
     }
 }
